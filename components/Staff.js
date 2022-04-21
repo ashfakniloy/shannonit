@@ -2,11 +2,11 @@ import Image from "next/image";
 import { staffs } from "../data/staffs";
 
 function Staff() {
-  const team = staffs.slice(0, 5);
+  const team = staffs.slice(0, 6);
 
   return (
     <div className="bg-custom-gray4">
-      <div className="lg:container px-4 py-16 lg:py-[190px] ">
+      <div className="lg:container py-16 lg:py-[190px] ">
         <div className="text-center lg:mx-52 lg:px-28">
           <h2 className="heading-lg">Our Staff</h2>
           <p className="mt-6 text-custom-gray3">
@@ -15,7 +15,7 @@ function Staff() {
           </p>
         </div>
 
-        <div className="mt-10 lg:mt-20 grid lg:grid-cols-5 gap-7 lg:gap-5">
+        <div className="mt-10 lg:px-16 lg:mt-20 grid lg:grid-cols-3 gap-7 lg:gap-x-5 lg:gap-y-14">
           {team.map((staff) => (
             <div
               key={staff.id}

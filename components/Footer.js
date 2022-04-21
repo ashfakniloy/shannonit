@@ -6,7 +6,11 @@ function Footer() {
       <div className="mt-10 lg:mt-0 flex flex-col items-center gap-2 text-sm font-medium text-white">
         <p className="">Contact Information</p>
         <div className="mt-3 flex items-center gap-3">
-          <FaPhone /> <p>01743136127</p>
+          {/* <FaPhone /> <a href="tel:01743136127">01743136127</a> */}
+          <FaPhone />
+          <a href="https://api.whatsapp.com/send?phone=01743136127">
+            01743136127
+          </a>
         </div>
         <div className=" flex items-center gap-3">
           <FaEnvelope /> <p>rana.buddy@gmail.com</p>

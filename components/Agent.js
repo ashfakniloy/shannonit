@@ -43,7 +43,12 @@ function Agent() {
             <p className="text-xs">Agent</p>
             <div className="flex items-center text-custom-orange cursor-pointer hover:text-black duration-300">
               <FaPhoneAlt className="mr-1 text-xs" />
-              <p className="text-sm">+8801743136127</p>
+              <a
+                href="https://api.whatsapp.com/send?phone=01743136127"
+                className="text-sm"
+              >
+                01743136127
+              </a>
             </div>
             <div
               className="absolute bottom-2 text-2xl text-slate-600 hover:text-custom-orange duration-300"

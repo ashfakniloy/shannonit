@@ -10,8 +10,8 @@ function ourTeamPage() {
   return (
     <Layout title={title} heading={heading} text={text}>
       <div className="bg-custom-gray4">
-        <div className="lg:container px-4 py-16 lg:py-[190px] ">
-          <div className="grid lg:grid-cols-5 gap-7 lg:gap-5">
+        <div className="lg:container lg:px-16 py-16 lg:py-[190px] ">
+          <div className="grid lg:grid-cols-3 gap-7 lg:gap-x-5 lg:gap-y-14">
             {staffs.map((staff) => (
               <div
                 key={staff.id}
