@@ -31,7 +31,7 @@ function Accordion({ service, index, clicked, setClicked }) {
           }
         >
           <p className="text-sm text-custom-gray3">{service.desc}</p>
-          <Link href="/more">
+          <Link href="/more" passHref>
             <p className="link">
               Learn more <FaAngleRight />
             </p>

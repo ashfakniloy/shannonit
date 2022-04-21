@@ -18,7 +18,7 @@ function Banner({ heading, text }) {
               best results in web design. Join our community to start building
               your website now
             </p>
-            <Link href="/more">
+            <Link href="/more" passHref>
               <button className="mt-12 py-3 lg:py-4 px-6 lg:px-10 bg-white hover:bg-custom-orange duration-300 text-custom-gray text-xs lg:text-sm font-bold tracking-widest font-Montserrat rounded-full uppercase">
                 read more
               </button>

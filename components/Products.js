@@ -23,7 +23,7 @@ function Products() {
         </div>
 
         <div className="flex justify-center mt-5">
-          <Link href="/gallery">
+          <Link href="/gallery" passHref>
             <button className="px-10 lg:px-16 py-3 lg:py-4 bg-white hover:bg-custom-gray text-custom-gray hover:text-white duration-300 text-sm border-2 border-slate-300 hover:border-custom-gray font-Montserrat rounded-full uppercase">
               see more
             </button>

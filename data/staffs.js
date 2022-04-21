@@ -1,26 +1,26 @@
 export const staffs = [
   {
     id: 1,
-    name: "Mariah Cambel",
-    position: "Web designer",
-    img: "/images/staffs/staff1.jpg",
+    name: "Rana Ahamed",
+    position: "CEO",
+    img: "/images/staffs/rana.jpg",
   },
   {
     id: 2,
-    name: "Roger Cooper",
-    position: "Project manager",
-    img: "/images/staffs/staff2.jpg",
+    name: "Ashfak Ahmed Niloy",
+    position: "Web Developer",
+    img: "/images/staffs/niloy.jpg",
   },
   {
     id: 3,
     name: "Andrew Hughes",
-    position: "CEO",
+    position: "Web Designer",
     img: "/images/staffs/staff3.jpg",
   },
   {
     id: 4,
     name: "Carl Palmer",
-    position: "Chief web developer",
+    position: "Project Manager",
     img: "/images/staffs/staff4.jpg",
   },
   {
