@@ -8,12 +8,14 @@ function Footer() {
         <div className="mt-3 flex items-center gap-3">
           {/* <FaPhone /> <a href="tel:01743136127">01743136127</a> */}
           <FaPhone />
-          <a href="https://api.whatsapp.com/send?phone=01743136127">
-            01743136127
+          <a href="https://api.whatsapp.com/send?phone=+8801743136127">
+            +8801743136127
           </a>
         </div>
         <div className=" flex items-center gap-3">
-          <FaEnvelope /> <p>rana.buddy@gmail.com</p>
+          <FaEnvelope />
+          <a href="mailto:rana.buddy@gmail.com">rana.buddy@gmail.com</a>
+          {/* <p>rana.buddy@gmail.com</p> */}
         </div>
         <div className=" flex items-center gap-3">
           <FaLocationArrow />
