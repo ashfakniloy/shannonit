@@ -54,7 +54,7 @@ function ContactInfo() {
                   width={38}
                   height={35}
                 /> */}
-                <p>41/14-A Afsar Uddin Lane,1209, Zigatola -Dhaka</p>
+                <p>41/14-A Afsar Uddin Lane,1209, Zigatola - Dhaka</p>
               </div>
             </div>
           </div>

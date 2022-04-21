@@ -18,7 +18,7 @@ function Footer() {
         </div>
         <div className=" flex items-center gap-2">
           <MdLocationPin className="text-lg" />
-          <p>41/14-A Afsar Uddin Lane,1209, Zigatola -Dhaka</p>
+          <p>41/14-A Afsar Uddin Lane,1209, Zigatola - Dhaka</p>
         </div>
       </div>
       <p className="mt-14 text-xs text-white text-center pr-10">
