@@ -33,7 +33,10 @@ function ContactInfo() {
                   width={38}
                   height={35}
                 /> */}
-                <p>01743136127</p>
+
+                <a href="https://api.whatsapp.com/send?phone=+8801743136127">
+                  +8801743136127
+                </a>
               </div>
               <div className="flex items-center gap-5 ">
                 <MdEmail className="text-4xl fill-custom-orange" />
@@ -44,7 +47,8 @@ function ContactInfo() {
                   width={38}
                   height={28}
                 /> */}
-                <p>rana.buddy@gmail.com</p>
+
+                <a href="mailto:rana.buddy@gmail.com">rana.buddy@gmail.com</a>
               </div>
               <div className="flex items-center gap-5 ">
                 <MdLocationPin className="text-4xl fill-custom-orange" />
