@@ -23,7 +23,7 @@ function ContactInfo() {
               contact us just right now. Your personal manager will take into
               consideration all your requires with pleasure.
             </p>
-            <div className="flex flex-col gap-7 lg:gap-10 mt-7 lg:mt-10 w-[240px] text-custom-gray3">
+            <div className="flex flex-col gap-7 lg:gap-10 mt-7 lg:mt-10  text-custom-gray3">
               <div className="flex items-center gap-8 ">
                 <Image
                   src="/images/contact/phone.png"
@@ -31,25 +31,27 @@ function ContactInfo() {
                   width={38}
                   height={35}
                 />
-                <p>(123) 456-7890</p>
+                <p>01743136127</p>
               </div>
-              <div className="flex items-center gap-8 ">
+              <div className="flex items-center gap-3 ">
                 <Image
                   src="/images/contact/message.png"
                   alt=""
-                  width={35}
+                  width={38}
                   height={28}
                 />
-                <p>mail@demolink.org</p>
+                <p className="">rana.buddy@gmail.com</p>
               </div>
               <div className="flex items-center gap-8 ">
                 <Image
                   src="/images/contact/location.png"
                   alt=""
-                  width={60}
-                  height={60}
+                  width={38}
+                  height={35}
                 />
-                <p>6036 Richmond hwy., Alexandria, VA 22303</p>
+                <p className="">
+                  41/14-A Afsar Uddin Lane,1209, Zigatola -Dhaka
+                </p>
               </div>
             </div>
           </div>
