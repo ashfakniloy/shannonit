@@ -26,7 +26,7 @@ export const staffs = [
   {
     id: 5,
     name: "Nahar Zehra",
-    position: "Marketting Manager",
+    position: "Marketing Manager",
     img: "/images/staffs/nahar.jpg",
   },
   {

@@ -39,7 +39,7 @@ function Header() {
       >
         <div className="px-4 lg:container flex justify-between items-center">
           <div className="">
-            <Link href="/">
+            <Link href="/" passHref>
               <div className="w-[50px] h-[50px]">
                 <Image
                   src="/images/logo/shannonit.jpg"
