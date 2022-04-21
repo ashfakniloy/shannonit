@@ -10,10 +10,10 @@ function Products() {
     <div className="bg-white">
       <div className="lg:container py-20 px-4 lg:py-32">
         <div className="lg:w-2/4">
-          <div className="heading-lg">
-            <h2 className="">For all the things you want to do.</h2>
-            <h2 className="mt-2">For the things you love.</h2>
-          </div>
+          <h2 className="heading-lg leading-snug">
+            For all the things you want to do. <br />
+            For the things you love.
+          </h2>
         </div>
 
         <div className="lg:container py-16 px-4 grid lg:grid-cols-3 gap-6">

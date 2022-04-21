@@ -3,7 +3,7 @@ import ContactInfo from "../components/ContactInfo";
 import Layout from "../components/Layout";
 import Request from "../components/Request";
 
-function contact() {
+function ContactPage() {
   const title = "Contact page";
   const heading = "Contact information";
   const text = "Beautifully Minimal";
@@ -17,4 +17,4 @@ function contact() {
   );
 }
 
-export default contact;
+export default ContactPage;

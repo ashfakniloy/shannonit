@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 
-function blogPage() {
+function BlogPage() {
   const title = "Blog page";
   const heading = "We are creative";
   const text = "There is a template for everything";
@@ -15,4 +15,4 @@ function blogPage() {
   );
 }
 
-export default blogPage;
+export default BlogPage;

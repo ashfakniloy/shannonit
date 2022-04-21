@@ -3,7 +3,7 @@ import Comments from "../components/Comments";
 import Layout from "../components/Layout";
 import { clientList } from "../data/clientList";
 
-function clients() {
+function ClientsPage() {
   const title = "Client page";
   const heading = "Our dear clients";
   const text = "Beautifully Minimal";
@@ -37,4 +37,4 @@ function clients() {
   );
 }
 
-export default clients;
+export default ClientsPage;

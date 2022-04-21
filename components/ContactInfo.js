@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Image from "next/image";
+import { MdPhoneInTalk, MdEmail, MdLocationPin } from "react-icons/md";
+// import Image from "next/image";
 
 function ContactInfo() {
   const [name, setName] = useState("");
@@ -24,39 +25,41 @@ function ContactInfo() {
               consideration all your requires with pleasure.
             </p>
             <div className="flex flex-col gap-7 lg:gap-10 mt-7 lg:mt-10  text-custom-gray3">
-              <div className="flex items-center gap-8 ">
-                <Image
+              <div className="flex items-center gap-5 ">
+                <MdPhoneInTalk className="text-4xl fill-custom-orange" />
+                {/* <Image
                   src="/images/contact/phone.png"
                   alt=""
                   width={38}
                   height={35}
-                />
+                /> */}
                 <p>01743136127</p>
               </div>
-              <div className="flex items-center gap-3 ">
-                <Image
+              <div className="flex items-center gap-5 ">
+                <MdEmail className="text-4xl fill-custom-orange" />
+
+                {/* <Image
                   src="/images/contact/message.png"
                   alt=""
                   width={38}
                   height={28}
-                />
-                <p className="">rana.buddy@gmail.com</p>
+                /> */}
+                <p>rana.buddy@gmail.com</p>
               </div>
-              <div className="flex items-center gap-8 ">
-                <Image
+              <div className="flex items-center gap-5 ">
+                <MdLocationPin className="text-4xl fill-custom-orange" />
+                {/* <Image
                   src="/images/contact/location.png"
                   alt=""
                   width={38}
                   height={35}
-                />
-                <p className="">
-                  41/14-A Afsar Uddin Lane,1209, Zigatola -Dhaka
-                </p>
+                /> */}
+                <p>41/14-A Afsar Uddin Lane,1209, Zigatola -Dhaka</p>
               </div>
             </div>
           </div>
 
-          <div className="lg:place-self-end border-[16px] border-[#dfddce] p-4 lg:p-10">
+          <div className="lg:place-self-end border-[16px] border-[#dfddce] p-6 lg:p-10">
             <div className="text-center heading-lg leading-snug lg:text-[26px]">
               <h1>Have questions?</h1>
               <h1>We call you back!</h1>
@@ -71,14 +74,14 @@ function ContactInfo() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your name *"
-                className="w-[250px] lg:w-[360px] outline-none py-2 border-b-2 border-gray-300 focus:border-red-500 "
+                className="w-full lg:w-[360px] outline-none py-2 border-b-2 border-gray-300 focus:border-red-500 "
               />
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email *"
-                className="mt-3 w-[250px] lg:w-[360px] outline-none py-2 border-b-2 border-gray-300 focus:border-red-500 "
+                className="mt-3 w-full lg:w-[360px] outline-none py-2 border-b-2 border-gray-300 focus:border-red-500 "
               />
               <textarea
                 type="text"
@@ -86,8 +89,8 @@ function ContactInfo() {
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Message *"
                 rows="3"
-                className="mt-3 w-[250px] lg:w-[360px] outline-none py-2 border-b-2 border-gray-300 focus:border-red-500 resize-none"
-              ></textarea>
+                className="mt-3 w-full lg:w-[360px] outline-none py-2 border-b-2 border-gray-300 focus:border-red-500 resize-none"
+              />
 
               <button
                 type="submit"

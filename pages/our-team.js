@@ -2,7 +2,7 @@ import Image from "next/image";
 import Layout from "../components/Layout";
 import { staffs } from "../data/staffs";
 
-function ourTeamPage() {
+function OurTeamPage() {
   const title = "Our team page";
   const heading = "Our Team";
   const text = "Beautifully Minimal";
@@ -10,15 +10,20 @@ function ourTeamPage() {
   return (
     <Layout title={title} heading={heading} text={text}>
       <div className="bg-custom-gray4">
-        <div className="lg:container lg:px-16 py-16 lg:py-[190px] ">
-          <div className="grid lg:grid-cols-3 gap-7 lg:gap-x-5 lg:gap-y-14">
+        <div className="lg:container px-16 py-16 lg:py-[190px] ">
+          <div className="grid lg:grid-cols-3 gap-6 lg:gap-x-5 lg:gap-y-6">
             {staffs.map((staff) => (
               <div
                 key={staff.id}
-                className="flex flex-col items-center gap-4 lg:gap-5 mb-8"
+                className="flex flex-col items-center gap-2 mb-8"
               >
-                <Image src={staff.img} alt="" width={280} height={340} />
-                <h3 className="text-lg font-Montserrat text-custom-gray lg:heading-lg">
+                <Image
+                  src={staff.img}
+                  alt={staff.name}
+                  width={280}
+                  height={340}
+                />
+                <h3 className="mt-5 text-lg font-Montserrat text-custom-gray lg:heading-lg">
                   {staff.name}
                 </h3>
                 <p className="text-sm text-center text-custom-gray3">
@@ -33,12 +38,4 @@ function ourTeamPage() {
   );
 }
 
-export default ourTeamPage;
-
-// import React from "react";
-
-// function team() {
-//   return <div>team</div>;
-// }
-
-// export default team;
+export default OurTeamPage;

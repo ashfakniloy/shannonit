@@ -4,7 +4,7 @@ import Services from "../components/Services";
 import Request from "../components/Request";
 import Pricing from "../components/Pricing";
 
-function servicesPage() {
+function ServicesPage() {
   const title = "Services page";
   const heading = "Get Your Next Project Done With Us.";
   const text = "There's a template for everything";
@@ -28,4 +28,4 @@ function servicesPage() {
   );
 }
 
-export default servicesPage;
+export default ServicesPage;

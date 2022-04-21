@@ -5,7 +5,7 @@ import Counts from "../components/Counts";
 import Staff from "../components/Staff";
 import ServicesAccordion from "../components/ServicesAccordion";
 
-function about() {
+function AboutPage() {
   const title = "About page";
   const heading = "We are creative";
   const text = "There is a template for everything";
@@ -20,4 +20,4 @@ function about() {
   );
 }
 
-export default about;
+export default AboutPage;

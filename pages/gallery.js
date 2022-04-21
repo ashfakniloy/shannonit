@@ -3,7 +3,7 @@ import ImageGrid from "../components/ImageGrid";
 import Layout from "../components/Layout";
 import { productList } from "../data/productList";
 
-function galleryPage() {
+function GalleryPage() {
   const title = "Gallery page";
   const heading = "For all the things you want to do.";
   const text = "There's a template for everything";
@@ -23,4 +23,4 @@ function galleryPage() {
   );
 }
 
-export default galleryPage;
+export default GalleryPage;

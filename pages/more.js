@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/Layout";
 import { moreList } from "../data/moreList";
 
-function morePage() {
+function MorePage() {
   const title = "More page";
   const heading = "We are creative";
   const text = "There's a template for everything";
@@ -28,4 +28,4 @@ function morePage() {
   );
 }
 
-export default morePage;
+export default MorePage;
