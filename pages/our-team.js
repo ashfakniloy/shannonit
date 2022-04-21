@@ -11,7 +11,7 @@ function ourTeamPage() {
     <Layout title={title} heading={heading} text={text}>
       <div className="bg-custom-gray4">
         <div className="lg:container px-4 py-16 lg:py-[190px] ">
-          <div className="grid lg:grid-cols-4 gap-7 lg:gap-5">
+          <div className="grid lg:grid-cols-5 gap-7 lg:gap-5">
             {staffs.map((staff) => (
               <div
                 key={staff.id}
@@ -21,7 +21,9 @@ function ourTeamPage() {
                 <h3 className="text-lg font-Montserrat text-custom-gray lg:heading-lg">
                   {staff.name}
                 </h3>
-                <p className="text-sm text-custom-gray3">{staff.position}</p>
+                <p className="text-sm text-center text-custom-gray3">
+                  {staff.position}
+                </p>
               </div>
             ))}
           </div>
