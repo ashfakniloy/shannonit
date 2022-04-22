@@ -11,7 +11,7 @@ function OurTeamPage() {
     <Layout title={title} heading={heading} text={text}>
       <div className="bg-custom-gray4">
         <div className="lg:container px-16 py-16 lg:py-[190px] ">
-          <div className="grid lg:grid-cols-3 gap-6 lg:gap-x-5 lg:gap-y-6">
+          <div className="grid lg:grid-cols-4 gap-6 lg:gap-x-5 lg:gap-y-6">
             {staffs.map((staff) => (
               <div
                 key={staff.id}

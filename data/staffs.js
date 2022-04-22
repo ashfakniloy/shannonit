@@ -35,4 +35,10 @@ export const staffs = [
     position: "Content Specialist",
     img: "/images/staffs/shaiok.jpg",
   },
+  {
+    id: 7,
+    name: "Moshiur Rahman",
+    position: "Head of Business Development & Marketing",
+    img: "/images/staffs/moshiur.jpg",
+  },
 ];
