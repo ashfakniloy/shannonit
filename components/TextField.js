@@ -8,7 +8,7 @@ function TextField({ label, ...props }) {
       <div className="my-3 relative">
         {props.textarea ? (
           <textarea
-            className="w-full lg:w-[360px] outline-none py-2 border-b-2 border-gray-300 focus:border-red-500"
+            className="w-[250px] lg:w-[360px] outline-none py-2 border-b-2 border-gray-300 focus:border-red-500"
             rows="3"
             id={field.name}
             {...field}
@@ -16,7 +16,7 @@ function TextField({ label, ...props }) {
           />
         ) : (
           <input
-            className="w-full lg:w-[360px] outline-none py-2 border-b-2 border-gray-300 focus:border-red-500"
+            className="w-[250px] lg:w-[360px] outline-none py-2 border-b-2 border-gray-300 focus:border-red-500"
             id={field.name}
             {...field}
             {...props}
