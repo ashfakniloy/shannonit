@@ -100,7 +100,7 @@ function ContactInfo() {
                       type="text"
                     />
                     <TextField
-                      placeholder="Message *"
+                      placeholder="Service You Are Looking For *"
                       name="message"
                       type="text"
                       textarea="true"
