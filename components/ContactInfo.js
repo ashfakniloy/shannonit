@@ -108,9 +108,8 @@ function ContactInfo() {
 
                     <button
                       type="submit"
-                      className={`mt-7 lg:mt-9 bg-custom-orange text-white px-5 lg:px-8 py-3 rounded-full uppercase ${
-                        formik.isSubmitting ? "opacity-60" : "opacity-100"
-                      }`}
+                      className="mt-7 lg:mt-9 bg-custom-orange text-white px-5 lg:px-8 py-3 rounded-full uppercase disabled:opacity-60 disabled:cursor-wait"
+                      disabled={formik.isSubmitting}
                       aria-label="send message"
                     >
                       {formik.isSubmitting ? "sending message" : "send message"}
