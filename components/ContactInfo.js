@@ -34,7 +34,7 @@ function ContactInfo() {
     });
 
     if (res.ok) {
-      toast.success("Submitted Successfully!");
+      toast.success("Message sent successfully!");
       console.log(res);
       formik.resetForm();
     } else {
@@ -108,9 +108,12 @@ function ContactInfo() {
 
                     <button
                       type="submit"
-                      className="mt-7 lg:mt-9 bg-custom-orange text-white px-5 lg:px-8 py-3 rounded-full uppercase"
+                      className={`mt-7 lg:mt-9 bg-custom-orange text-white px-5 lg:px-8 py-3 rounded-full uppercase ${
+                        formik.isSubmitting ? "opacity-60" : "opacity-100"
+                      }`}
+                      aria-label="send message"
                     >
-                      send message
+                      {formik.isSubmitting ? "sending message" : "send message"}
                     </button>
                   </div>
                 </Form>
