@@ -6,6 +6,7 @@ function TextField({ label, ...props }) {
   return (
     <div className="">
       <div className="my-3 relative">
+        <label htmlFor={field.name}></label>
         {props.textarea ? (
           <textarea
             className="w-[250px] lg:w-[360px] outline-none py-2 border-b-2 border-gray-300 focus:border-red-500"

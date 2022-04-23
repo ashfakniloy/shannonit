@@ -57,6 +57,7 @@ function Header() {
           <button
             className="lg:hidden bg-white text-custom-orange text-xl p-2"
             onClick={handleToggle}
+            aria-label="toggle"
           >
             <FaBars className={!toggle ? "block" : "hidden"} />
             <FaTimes className={toggle ? "block" : "hidden"} />

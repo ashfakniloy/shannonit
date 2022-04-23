@@ -19,6 +19,7 @@ function Agent() {
     <div className=" fixed bottom-10 left-4 lg:left-10">
       <button
         type="button"
+        aria-label="agent"
         className="z-20 p-5 opacity-100 text-4xl font-extrabold text-custom-orange
       bg-gray-100 shadow-lg rounded-full  duration-300 
       hover:text-opacity-70"
