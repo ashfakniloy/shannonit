@@ -31,6 +31,7 @@ function Modal({ showModal, setShowModal }) {
           <div className="absolute -top-14 -right-8">
             <button
               className="text-slate-300 hover:text-slate-50 text-lg"
+              aria-label="close modal"
               onClick={() => setShowModal(false)}
             >
               <FaTimes />

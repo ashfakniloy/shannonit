@@ -29,6 +29,7 @@ function ScrollToTop() {
   return (
     <button
       type="button"
+      aria-label="scroll to top"
       onClick={scrollToTop}
       className={
         isVisible
