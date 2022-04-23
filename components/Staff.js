@@ -2,7 +2,7 @@ import Image from "next/image";
 import { staffs } from "../data/staffs";
 
 function Staff() {
-  const team = staffs.slice(0, 7);
+  const team = staffs.slice(0, 8);
 
   return (
     <div className="bg-custom-gray4">
@@ -15,7 +15,7 @@ function Staff() {
           </p>
         </div>
 
-        <div className="mt-10 lg:px-16 lg:mt-20 grid lg:grid-cols-4 gap-6 lg:gap-x-5 lg:gap-y-6">
+        <div className="mt-10 lg:mt-20 grid lg:grid-cols-4 gap-6 lg:gap-x-5 lg:gap-y-6">
           {team.map((staff) => (
             <div
               key={staff.id}

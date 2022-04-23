@@ -41,4 +41,10 @@ export const staffs = [
     position: "Head of Business Development & Marketing",
     img: "/images/staffs/moshiur.jpg",
   },
+  {
+    id: 8,
+    name: "MD. Rayhan Uddin Himel",
+    position: "Mobile Application Developer",
+    img: "/images/staffs/himel.jpg",
+  },
 ];

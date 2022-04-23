@@ -22,7 +22,7 @@ function Footer() {
         </div>
       </div>
       <p className="mt-14 text-xs text-white text-center pr-10">
-        &copy; 2022 Shannon It. All Rights Reserved.
+        &copy; 2022 Shannon IT. All Rights Reserved.
       </p>
     </div>
   );

@@ -1,10 +1,9 @@
 import * as Yup from "yup";
-import { useFormik, Formik, Form } from "formik";
+import { Formik, Form } from "formik";
 import { MdPhoneInTalk, MdEmail, MdLocationPin } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TextField from "./TextField";
-// import Image from "next/image";
 
 const API_URL = "https://boolalgback.herokuapp.com/saveinfo";
 
@@ -23,15 +22,20 @@ function ContactInfo() {
     message: Yup.string().required("Message is required"),
   });
 
-  const handleSubmit = async (values) => {
+  const handleSubmit = async (values, formik) => {
+    const { name, email, number, message } = values;
+
     const res = await fetch(`${API_URL}`, {
       method: "POST",
-      body: JSON.stringify(values),
+      body: JSON.stringify({ name, email, number, message }),
     });
 
     if (res.ok) {
       toast.success("Submitted Successfully!");
+      console.log(res);
+      formik.resetForm();
     } else {
+      console.log("status", res.status);
       toast.error("Something went wrong!");
     }
   };
@@ -52,19 +56,16 @@ function ContactInfo() {
             <div className="flex flex-col gap-7 lg:gap-10 mt-7 lg:mt-10  text-custom-gray3">
               <div className="flex items-center gap-5 ">
                 <MdPhoneInTalk className="text-4xl fill-custom-orange" />
-
                 <a href="https://api.whatsapp.com/send?phone=+8801743136127">
                   +8801743136127
                 </a>
               </div>
               <div className="flex items-center gap-5 ">
                 <MdEmail className="text-4xl fill-custom-orange" />
-
                 <a href="mailto:rana.buddy@gmail.com">rana.buddy@gmail.com</a>
               </div>
               <div className="flex items-center gap-5 ">
                 <MdLocationPin className="text-4xl fill-custom-orange" />
-
                 <p>41/14-A Afsar Uddin Lane,1209, Zigatola - Dhaka</p>
               </div>
             </div>
@@ -79,11 +80,7 @@ function ContactInfo() {
             <Formik
               initialValues={initialvalues}
               validationSchema={validate}
-              onSubmit={(values, { resetForm }) => {
-                console.log("Submitted values", values);
-                handleSubmit(values);
-                resetForm();
-              }}
+              onSubmit={handleSubmit}
             >
               {(formik) => (
                 <Form>
