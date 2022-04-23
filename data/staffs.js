@@ -20,7 +20,7 @@ export const staffs = [
   {
     id: 4,
     name: "Julfikar Rijon",
-    position: "Digital marketting & Animation specialist",
+    position: "Digital marketing & Animation specialist",
     img: "/images/staffs/rijon.jpg",
   },
   {

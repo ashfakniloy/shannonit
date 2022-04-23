@@ -17,12 +17,14 @@ function OurTeamPage() {
                 key={staff.id}
                 className="flex flex-col items-center gap-2 mb-8"
               >
-                <Image
-                  src={staff.img}
-                  alt={staff.name}
-                  width={280}
-                  height={340}
-                />
+                <div>
+                  <Image
+                    src={staff.img}
+                    alt={staff.name}
+                    width={280}
+                    height={340}
+                  />
+                </div>
                 <h3 className="mt-5 text-lg font-Montserrat text-custom-gray lg:heading-lg">
                   {staff.name}
                 </h3>
