@@ -4,7 +4,7 @@ import { MdPhoneInTalk, MdEmail, MdLocationPin } from "react-icons/md";
 function Footer() {
   return (
     <div className="bg-custom-gray py-[50px]">
-      <div className="mt-10 lg:mt-0 flex flex-col items-center gap-2 text-sm font-medium text-white">
+      <div className="mt-10 lg:mt-0 flex flex-col items-center gap-3 text-sm font-medium text-white">
         <p className="text-base">Contact Information</p>
         <div className="mt-3 flex items-center gap-2">
           <MdPhoneInTalk className="text-lg" />
