@@ -49,7 +49,7 @@ function Header() {
                 />
               </div>
               {/* <p className="text-[22px] font-Raleway cursor-pointer">
-                Shannon it
+                Shannon IT
               </p> */}
             </Link>
           </div>

@@ -24,6 +24,7 @@ function Layout({ title, description, keywords, heading, text, children }) {
         <Banner heading={heading} text={text} />
 
         {children}
+
         <Agent />
 
         <ScrollToTop />
@@ -35,9 +36,9 @@ function Layout({ title, description, keywords, heading, text, children }) {
 }
 
 Layout.defaultProps = {
-  title: "Shannon It",
-  description: "Shannon It",
-  keywords: "Shannon It",
+  title: "Shannon IT",
+  description: "Shannon IT",
+  keywords: "Shannon IT",
 };
 
 export default Layout;

@@ -30,6 +30,16 @@ function Header() {
     };
   }, []);
 
+  const activeBorder = (path) =>
+    pathname === path
+      ? "border-custom-orange header2-link"
+      : "border-transparent header2-link";
+
+  const activeLink = (path) =>
+    pathname === path
+      ? "text-black"
+      : "hover:text-black cursor-pointer duration-300";
+
   return (
     <div className="fixed w-full z-10">
       <div
@@ -43,13 +53,13 @@ function Header() {
               <div className="w-[50px] h-[50px]">
                 <Image
                   src="/images/logo/shannonit.jpg"
-                  alt="shannon it"
+                  alt="Shannon IT"
                   width={238}
                   height={212}
                 />
               </div>
               {/* <h1 className="text-[22px] font-Raleway cursor-pointer">
-                Graphonex
+                Shannon IT
               </h1> */}
             </Link>
           </div>
@@ -67,41 +77,16 @@ function Header() {
               <a className="header2-link border-transparent">home</a>
             </Link>
             <Link href="/about">
-              <a
-                className={`header2-link ${
-                  pathname === "/about"
-                    ? "border-custom-orange"
-                    : "border-transparent"
-                }`}
-              >
-                about us
-              </a>
+              <a className={activeBorder("/about")}>about us</a>
             </Link>
             <Link href="/gallery">
-              <a
-                className={`header2-link ${
-                  pathname === "/gallery"
-                    ? "border-custom-orange"
-                    : "border-transparent"
-                }`}
-              >
-                gallery
-              </a>
+              <a className={activeBorder("/gallery")}>gallery</a>
             </Link>
             <Link href="/services">
-              <a
-                className={`header2-link ${
-                  pathname === "/services"
-                    ? "border-custom-orange"
-                    : "border-transparent"
-                }`}
-              >
-                services
-              </a>
+              <a className={activeBorder("/services")}>services</a>
             </Link>
 
             <div
-              className=""
               onMouseEnter={() => setShowMenu(true)}
               onMouseLeave={() => setShowMenu(false)}
             >
@@ -114,37 +99,13 @@ function Header() {
                   <div className="h-8 border-b-2 border-custom-orange"></div>
                   <div className="text-custom-orange bg-white flex flex-col gap-4 p-6 pr-24 shadow-xl ">
                     <Link href="/clients">
-                      <a
-                        className={
-                          pathname === "/clients"
-                            ? "text-black"
-                            : "hover:text-black cursor-pointer duration-300"
-                        }
-                      >
-                        Clients
-                      </a>
+                      <a className={activeLink("/clients")}>Clients</a>
                     </Link>
                     <Link href="/our-team">
-                      <a
-                        className={
-                          pathname === "/our-team"
-                            ? "text-black"
-                            : "hover:text-black cursor-pointer duration-300"
-                        }
-                      >
-                        Our Team
-                      </a>
+                      <a className={activeLink("/our-team")}>Our Team</a>
                     </Link>
                     <Link href="/pricing">
-                      <a
-                        className={
-                          pathname === "/pricing"
-                            ? "text-black"
-                            : "hover:text-black cursor-pointer duration-300"
-                        }
-                      >
-                        Pricing
-                      </a>
+                      <a className={activeLink("/pricing")}>Pricing</a>
                     </Link>
                   </div>
                 </div>
@@ -154,26 +115,10 @@ function Header() {
             </div>
 
             <Link href="/blog">
-              <a
-                className={`header2-link ${
-                  pathname === "/blog"
-                    ? "border-custom-orange"
-                    : "border-transparent"
-                }`}
-              >
-                blog
-              </a>
+              <a className={activeBorder("/blog")}>blog</a>
             </Link>
             <Link href="/contact">
-              <a
-                className={`header2-link ${
-                  pathname === "/contact"
-                    ? "border-custom-orange"
-                    : "border-transparent"
-                }`}
-              >
-                contact
-              </a>
+              <a className={activeBorder("/contact")}>contact</a>
             </Link>
           </div>
         </div>
