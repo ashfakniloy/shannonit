@@ -7,40 +7,41 @@ export const staffs = [
   },
   {
     id: 2,
+    name: "Moshiur Rahman",
+    position: "Head of Business Development & Marketing",
+    img: "/images/staffs/moshiur.jpg",
+  },
+  {
+    id: 3,
     name: "Yeasir Ahamed",
     position: "Chief Software Engineer",
     img: "/images/staffs/yeasir.jpg",
   },
   {
-    id: 3,
+    id: 4,
     name: "Ashfak Ahmed Niloy",
     position: "Web Developer",
     img: "/images/staffs/niloy.jpg",
   },
   {
-    id: 4,
+    id: 5,
     name: "Julfikar Rijon",
     position: "Digital marketing & Animation specialist",
     img: "/images/staffs/rijon.jpg",
   },
   {
-    id: 5,
+    id: 6,
     name: "Nahar Zehra",
     position: "Marketing Manager",
     img: "/images/staffs/nahar.jpg",
   },
   {
-    id: 6,
+    id: 7,
     name: "Shaiok Kundu",
     position: "Content Specialist",
     img: "/images/staffs/shaiok.jpg",
   },
-  {
-    id: 7,
-    name: "Moshiur Rahman",
-    position: "Head of Business Development & Marketing",
-    img: "/images/staffs/moshiur.jpg",
-  },
+
   {
     id: 8,
     name: "MD. Rayhan Uddin Himel",
