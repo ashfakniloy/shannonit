@@ -118,10 +118,6 @@ function Header() {
                 ""
               )}
             </div>
-
-            <Link href="/blog">
-              <a className="header-link">blog</a>
-            </Link>
             <Link href="/contact">
               <a className="header-link">contact</a>
             </Link>

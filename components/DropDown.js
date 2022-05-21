@@ -88,16 +88,6 @@ function DropDown({ pathname }) {
           )}
         </div>
 
-        <Link href="/blog">
-          <a
-            className={`px-6 py-2 border-b ${
-              pathname === "/blog" ? "text-black" : ""
-            }`}
-          >
-            blog
-          </a>
-        </Link>
-
         <Link href="/contact">
           <a
             className={`px-6 py-2 ${

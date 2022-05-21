@@ -114,10 +114,6 @@ function Header() {
                 ""
               )}
             </div>
-
-            <Link href="/blog">
-              <a className={activeBorder("/blog")}>blog</a>
-            </Link>
             <Link href="/contact">
               <a className={activeBorder("/contact")}>contact</a>
             </Link>
