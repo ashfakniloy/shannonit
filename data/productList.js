@@ -1,6 +1,5 @@
 export const productList = [
   { id: 1, name: "cloud computing", img: "/images/products/cloud comp1.png" },
-
   {
     id: 2,
     name: "desktop development",
@@ -21,7 +20,6 @@ export const productList = [
     name: "digital marketing",
     img: "/images/products/digital marketing 1.jpg",
   },
-
   {
     id: 6,
     name: "web development 2",
@@ -32,23 +30,25 @@ export const productList = [
     name: "desktop development 2",
     img: "/images/products/desktop dev2.jpg",
   },
-
   {
     id: 8,
     name: "digital marketing 2",
     img: "/images/products/digital marketing 2.jpg",
   },
-
   { id: 9, name: "cloud computing 2", img: "/images/products/cloud comp2.jpg" },
   {
     id: 10,
     name: "desktop development 3",
     img: "/images/products/desktop dev3.png",
   },
-
   {
     id: 11,
     name: "mobile development2",
     img: "/images/products/mobile develop 2.jpg",
+  },
+  {
+    id: 12,
+    name: "iot",
+    img: "/images/products/iot shannon.jpg",
   },
 ];
