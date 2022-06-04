@@ -3,7 +3,8 @@ import Link from "next/link";
 import { FaAngleDown } from "react-icons/fa";
 
 function DropDown({ pathname }) {
-  const [showMenu, setShowMenu] = useState(false);
+  const [showServices, setShowServices] = useState(false);
+  const [showPages, setShowPages] = useState(false);
 
   return (
     <div className="px-3">
@@ -41,7 +42,7 @@ function DropDown({ pathname }) {
             gallery
           </a>
         </Link>
-        <Link href="/services">
+        {/* <Link href="/services">
           <a
             className={`px-6 py-2 border-b ${
               pathname === "/services" ? "text-black" : ""
@@ -49,7 +50,52 @@ function DropDown({ pathname }) {
           >
             services
           </a>
-        </Link>
+        </Link> */}
+
+        <div className="border-b cursor-text">
+          <a
+            className={`flex justify-between items-center px-6 py-2 ${
+              pathname === "" ? "text-custom-orange" : ""
+            }`}
+          >
+            <p>Services</p>
+            <p
+              onClick={() => setShowServices(!showServices)}
+              className="cursor-pointer"
+            >
+              <FaAngleDown />
+            </p>
+          </a>
+          {showServices ? (
+            <div className="flex flex-col gap-2 px-10 py-2 text-sm cursor-pointer">
+              <Link href="/erp">
+                <a className={pathname === "/erp" ? "text-black" : ""}>E.R.P</a>
+              </Link>
+              <Link href="#">
+                <a className={pathname === "#" ? "text-black" : ""}>
+                  Desktop development
+                </a>
+              </Link>
+              <Link href="#">
+                <a className={pathname === "#" ? "text-black" : ""}>
+                  Web development
+                </a>
+              </Link>
+              <Link href="#">
+                <a className={pathname === "#" ? "text-black" : ""}>
+                  Mobile development
+                </a>
+              </Link>
+              <Link href="#">
+                <a className={pathname === "#" ? "text-black" : ""}>
+                  Digital marketing
+                </a>
+              </Link>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
 
         <div className="border-b cursor-text">
           <a
@@ -59,13 +105,13 @@ function DropDown({ pathname }) {
           >
             <p>pages</p>
             <p
-              onClick={() => setShowMenu(!showMenu)}
+              onClick={() => setShowPages(!showPages)}
               className="cursor-pointer"
             >
               <FaAngleDown />
             </p>
           </a>
-          {showMenu ? (
+          {showPages ? (
             <div className="flex flex-col gap-2 px-10 py-2 text-sm cursor-pointer">
               <Link href="/clients">
                 <a className={pathname === "/clients" ? "text-black" : ""}>

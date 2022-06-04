@@ -8,7 +8,8 @@ import DropDown from "./DropDown";
 function Header() {
   const [scroll, setScroll] = useState(false);
   const [toggle, setToggle] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
+  const [showServices, setShowServices] = useState(false);
+  const [showPages, setShowPages] = useState(false);
   const { pathname } = useRouter();
 
   const handleToggle = () => {
@@ -79,19 +80,66 @@ function Header() {
             <Link href="/gallery">
               <a className="header-link">gallery</a>
             </Link>
-            <Link href="/services">
+            {/* <Link href="/services">
               <a className="header-link">services</a>
-            </Link>
+            </Link> */}
 
             <div
-              onMouseEnter={() => setShowMenu(true)}
-              onMouseLeave={() => setShowMenu(false)}
+              onMouseEnter={() => setShowServices(true)}
+              onMouseLeave={() => setShowServices(false)}
+            >
+              <div>
+                <p className="header-link">Services</p>
+              </div>
+
+              {showServices ? (
+                <div className="absolute">
+                  <div className="h-8 border-b-2 border-custom-gray"></div>
+                  <div className="text-white bg-custom-orange flex flex-col py-3 shadow-xl">
+                    <Link href="/erp">
+                      <a className="hover:text-custom-orange hover:bg-white py-2 pl-4 pr-14 cursor-pointer duration-300">
+                        E.R.P
+                      </a>
+                    </Link>
+
+                    <Link href="#">
+                      <a className="hover:text-custom-orange hover:bg-white py-2 pl-4 pr-14 cursor-pointer duration-300">
+                        Desktop Development
+                      </a>
+                    </Link>
+
+                    <Link href="#">
+                      <a className="hover:text-custom-orange hover:bg-white py-2 pl-4 pr-14 cursor-pointer duration-300">
+                        Web Development
+                      </a>
+                    </Link>
+
+                    <Link href="#">
+                      <a className="hover:text-custom-orange hover:bg-white py-2 pl-4 pr-14 cursor-pointer duration-300">
+                        Mobile Development
+                      </a>
+                    </Link>
+                    <Link href="#">
+                      <a className="hover:text-custom-orange hover:bg-white py-2 pl-4 pr-14 cursor-pointer duration-300">
+                        Digital Marketing
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+
+            <div
+              onMouseEnter={() => setShowPages(true)}
+              onMouseLeave={() => setShowPages(false)}
             >
               <div>
                 <p className="header-link">pages</p>
               </div>
 
-              {showMenu ? (
+              {showPages ? (
                 <div className="absolute">
                   <div className="h-8 border-b-2 border-custom-gray"></div>
                   <div className="text-white bg-custom-orange flex flex-col py-3 shadow-xl">

@@ -8,7 +8,8 @@ import DropDown from "./DropDown";
 function Header() {
   const [scroll, setScroll] = useState(false);
   const [toggle, setToggle] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
+  const [showServices, setShowServices] = useState(false);
+  const [showPages, setShowPages] = useState(false);
   const { pathname } = useRouter();
 
   const handleToggle = () => {
@@ -83,22 +84,58 @@ function Header() {
             <Link href="/gallery">
               <a className={activeBorder("/gallery")}>gallery</a>
             </Link>
-            <Link href="/services">
+            {/* <Link href="/services">
               <a className={activeBorder("/services")}>services</a>
-            </Link>
+            </Link> */}
 
             <div
-              onMouseEnter={() => setShowMenu(true)}
-              onMouseLeave={() => setShowMenu(false)}
+              onMouseEnter={() => setShowServices(true)}
+              onMouseLeave={() => setShowServices(false)}
+            >
+              <div>
+                <p className="header-link">Services</p>
+              </div>
+
+              {showServices ? (
+                <div className="absolute">
+                  <div className="h-8 border-b-2 border-custom-orange"></div>
+                  <div className="text-custom-orange bg-white flex flex-col gap-4 pl-6 pr-14 py-5 shadow-xl">
+                    <Link href="/erp">
+                      <a className={activeLink("/erp")}>E.R.P</a>
+                    </Link>
+                    <Link href="#">
+                      <a className={activeLink("#")}>Desktop Development</a>
+                    </Link>
+
+                    <Link href="#">
+                      <a className={activeLink("/#")}>Web Development</a>
+                    </Link>
+
+                    <Link href="#">
+                      <a className={activeLink("/#")}>Mobile Development</a>
+                    </Link>
+                    <Link href="#">
+                      <a className={activeLink("/#")}>Digital Marketing</a>
+                    </Link>
+                  </div>
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+
+            <div
+              onMouseEnter={() => setShowPages(true)}
+              onMouseLeave={() => setShowPages(false)}
             >
               <div className="header2-link border-transparent hover:border-transparent">
                 <p>pages</p>
               </div>
 
-              {showMenu ? (
+              {showPages ? (
                 <div className="absolute">
                   <div className="h-8 border-b-2 border-custom-orange"></div>
-                  <div className="text-custom-orange bg-white flex flex-col gap-4 p-6 pr-24 shadow-xl ">
+                  <div className="text-custom-orange bg-white flex flex-col gap-4 p-6 pr-24 shadow-xl">
                     <Link href="/clients">
                       <a className={activeLink("/clients")}>Clients</a>
                     </Link>
