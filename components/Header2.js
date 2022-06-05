@@ -93,7 +93,9 @@ function Header() {
               onMouseLeave={() => setShowServices(false)}
             >
               <div>
-                <p className="header-link">Services</p>
+                <p className="header2-link border-transparent hover:border-transparent">
+                  Services
+                </p>
               </div>
 
               {showServices ? (

@@ -11,6 +11,7 @@ module.exports = {
         "custom-gray3": "#7d7d7d",
         "custom-gray4": "#F8F8F8",
         "custom-orange": "#d79b81",
+        "custom-blue": "#5173A6",
       },
       fontFamily: {
         Raleway: ["Raleway, sans-serif"],

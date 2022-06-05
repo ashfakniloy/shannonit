@@ -1,6 +1,6 @@
 import { useField, ErrorMessage } from "formik";
 
-function ERP_TextField({ label, ...props }) {
+function TextField2({ label, ...props }) {
   const [field, meta] = useField(props);
 
   return (
@@ -31,4 +31,4 @@ function ERP_TextField({ label, ...props }) {
   );
 }
 
-export default ERP_TextField;
+export default TextField2;

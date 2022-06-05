@@ -1,11 +1,16 @@
+import { useState } from "react";
 import * as Yup from "yup";
 import { Formik, Form } from "formik";
 import { ToastContainer, toast } from "react-toastify";
+import ERPModal from "./ERPModal";
 import "react-toastify/dist/ReactToastify.css";
-import Layout from "../components/Layout";
-import TextField from "./ERP_TextField";
+import TextField from "./TextField2";
+
+const API_URL = "https://boolalgback.herokuapp.com/erpData";
 
 function ERP_Form() {
+  const [showModal, setShowModal] = useState(false);
+
   const initialvalues = {
     name: "",
     address: "",
@@ -36,31 +41,25 @@ function ERP_Form() {
     message: Yup.string().required("Message is required"),
   });
 
-  const handleSubmit = (values, formik) => {
-    console.log(values);
-    formik.resetForm();
+  const handleSubmit = async (values, formik) => {
+    const res = await fetch(`${API_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+
+    if (res.ok) {
+      toast.success("Message sent successfully!");
+      setShowModal(true);
+      console.log(res);
+      formik.resetForm();
+    } else {
+      console.log("status", res.status);
+      toast.error("Something went wrong!");
+    }
   };
-
-  // const handleSubmit = async (values, formik) => {
-  //   const { name, email, number, country } = values;
-
-  //   const res = await fetch(`${API_URL}/saveinfo`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ name, email, number, country }),
-  //   });
-
-  //   if (res.ok) {
-  //     toast.success("Message sent successfully!");
-  //     console.log(res);
-  //     formik.resetForm();
-  //   } else {
-  //     console.log("status", res.status);
-  //     toast.error("Something went wrong!");
-  //   }
-  // };
 
   return (
     <div>
@@ -129,6 +128,8 @@ function ERP_Form() {
           )}
         </Formik>
       </div>
+
+      <ERPModal showModal={showModal} setShowModal={setShowModal} />
     </div>
   );
 }
