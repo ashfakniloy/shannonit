@@ -1,15 +1,17 @@
-import { useState } from "react";
+// import { useState } from "react";
+import { useRouter } from "next/router";
 import * as Yup from "yup";
 import { Formik, Form } from "formik";
 import { ToastContainer, toast } from "react-toastify";
-import ERPModal from "./ERPModal";
+// import ERPModal from "./ERPModal";
 import "react-toastify/dist/ReactToastify.css";
 import TextField from "./TextField2";
 
 const API_URL = "https://boolalgback.herokuapp.com/erpData";
 
 function ERP_Form() {
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
+  const router = useRouter();
 
   const initialvalues = {
     name: "",
@@ -51,10 +53,11 @@ function ERP_Form() {
     });
 
     if (res.ok) {
-      toast.success("Message sent successfully!");
-      setShowModal(true);
+      toast.success("Form Submitted Successfully!");
+      // setShowModal(true);
       console.log(res);
-      formik.resetForm();
+      router.push("/user");
+      // formik.resetForm();
     } else {
       console.log("status", res.status);
       toast.error("Something went wrong!");
@@ -129,7 +132,7 @@ function ERP_Form() {
         </Formik>
       </div>
 
-      <ERPModal showModal={showModal} setShowModal={setShowModal} />
+      {/* <ERPModal showModal={showModal} setShowModal={setShowModal} /> */}
     </div>
   );
 }
