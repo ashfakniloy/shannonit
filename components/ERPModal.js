@@ -40,8 +40,6 @@ function Modal({ showModal, setShowModal }) {
 
           <div className="p-6 text-center">
             <p className="text-xl lg:text-2xl font-bold font-Poppins text-custom-gray">
-              {/* You will be sent a login id, password and a link. As soon as you
-              get the link please change your password. */}
               A confirmation link has been sent to your email with a login id
               and password. Please check your email and change the password from
               the link.

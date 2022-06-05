@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import * as Yup from "yup";
 import { Formik, Form } from "formik";
@@ -8,7 +7,7 @@ import TextField from "../../components/TextField2";
 
 const API_URL = "https://boolalgback.herokuapp.com/login";
 
-function index() {
+function AdminPage() {
   const router = useRouter();
 
   const initialvalues = {
@@ -104,4 +103,4 @@ function index() {
   );
 }
 
-export default index;
+export default AdminPage;
