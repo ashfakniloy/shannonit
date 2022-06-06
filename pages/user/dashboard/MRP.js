@@ -1,15 +1,15 @@
 import Layout from "../../../components/UserDashboard/Layout";
 
-function RandDPage() {
+function MRPPage() {
   return (
     <Layout>
       <div className="text-white text-2xl flex-grow">
         <div className="px-10 py-3">
-          <h1>R&D Page</h1>
+          <h1>MRPPage</h1>
         </div>
       </div>
     </Layout>
   );
 }
 
-export default RandDPage;
+export default MRPPage;

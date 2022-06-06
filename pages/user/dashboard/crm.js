@@ -5,7 +5,7 @@ function CRMPage() {
     <Layout>
       <div className="text-white text-2xl flex-grow">
         <div className="px-10 py-3">
-          <h1>CRM Page</h1>
+          <h1>CRMPage</h1>
         </div>
       </div>
     </Layout>
