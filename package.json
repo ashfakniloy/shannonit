@@ -1,5 +1,5 @@
 {
-  "name": "graphonex",
+  "name": "shannonit",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,6 +21,7 @@
     "react-toastify": "^8.2.0",
     "react-tooltip": "^4.2.21",
     "react-waypoint": "^10.1.0",
+    "sharp": "^0.30.6",
     "slick-carousel": "^1.8.1",
     "yup": "^0.32.11"
   },
