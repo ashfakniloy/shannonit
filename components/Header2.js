@@ -105,6 +105,11 @@ function Header() {
                     <Link href="/erp">
                       <a className={activeLink("/erp")}>E.R.P</a>
                     </Link>
+                    <Link href="/school-management-system">
+                      <a className={activeLink("/school-management-system")}>
+                        School Management System
+                      </a>
+                    </Link>
                     <Link href="#">
                       <a className={activeLink("#")}>Desktop Development</a>
                     </Link>

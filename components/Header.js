@@ -102,6 +102,12 @@ function Header() {
                       </a>
                     </Link>
 
+                    <Link href="/school-management-system">
+                      <a className="hover:text-custom-orange hover:bg-white py-2 pl-4 pr-14 cursor-pointer duration-300">
+                        School Management System
+                      </a>
+                    </Link>
+
                     <Link href="#">
                       <a className="hover:text-custom-orange hover:bg-white py-2 pl-4 pr-14 cursor-pointer duration-300">
                         Desktop Development

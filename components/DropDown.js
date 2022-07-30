@@ -71,6 +71,15 @@ function DropDown({ pathname }) {
               <Link href="/erp">
                 <a className={pathname === "/erp" ? "text-black" : ""}>E.R.P</a>
               </Link>
+              <Link href="/school-management-system">
+                <a
+                  className={
+                    pathname === "/school-management-system" ? "text-black" : ""
+                  }
+                >
+                  School Management System
+                </a>
+              </Link>
               <Link href="#">
                 <a className={pathname === "#" ? "text-black" : ""}>
                   Desktop development
