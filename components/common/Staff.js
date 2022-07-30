@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { staffs } from "../data/staffs";
+import { staffs } from "../../data/staffs";
 
 function Staff() {
   const team = staffs.slice(0, 8);

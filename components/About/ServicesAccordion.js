@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { serviceList } from "../data/serviceList";
+import { serviceList } from "../../data/serviceList";
 import Accordion from "./Accordion";
 
 function ServicesAccordion() {

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Slider from "react-slick";
-import { commentList } from "../data/commentList";
+import { commentList } from "../../data/commentList";
 
 function Comments() {
   const settings = {
@@ -13,7 +13,7 @@ function Comments() {
   };
 
   return (
-    <div className="">
+    <div className="bg-[#f8f8f8]">
       <div className="lg:container py-16 px-4 lg:py-44">
         <div className="lg:mx-28">
           <div className="flex flex-col items-center">

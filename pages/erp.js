@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ERP_Form from "../components/ERP_Form";
+import ERP_Form from "../components/Services/ERP_Form";
 import Layout from "../components/Layout";
 
 function ERPPage() {

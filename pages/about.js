@@ -1,9 +1,9 @@
 import React from "react";
 import Layout from "../components/Layout";
-import Creatives from "../components/Creatives";
-import Counts from "../components/Counts";
-import Staff from "../components/Staff";
-import ServicesAccordion from "../components/ServicesAccordion";
+import Creatives from "../components/About/Creatives";
+import Counts from "../components/common/Counts";
+import Staff from "../components/common/Staff";
+import ServicesAccordion from "../components/About/ServicesAccordion";
 
 function AboutPage() {
   const title = "About page";

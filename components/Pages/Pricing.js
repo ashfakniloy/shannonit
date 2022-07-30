@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { pricingList } from "../data/pricingList";
-import Modal from "./Modal";
+import { pricingList } from "../../data/pricingList";
+import Modal from "../common/Modal";
 
 function Pricing() {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 bg-white py-16">
+    <div className="py-12 lg:py-[190px]">
+      <div className="lg:container grid grid-cols-1 lg:grid-cols-3 bg-white py-16">
         {pricingList.map((item) => (
           <div
             key={item.id}

@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import { Formik, Form } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import TextField from "../../components/TextField2";
+import { TextField2 as TextField } from "../../components/common/InputField";
 
 const API_URL = "https://boolalgback.herokuapp.com/login";
 
@@ -19,6 +19,10 @@ function AdminPage() {
     email: Yup.string().required("Email is required"),
     password: Yup.string().required("Password is required"),
   });
+
+  // const handleSubmit = (values) => {
+  //   console.log(values);
+  // };
 
   const handleSubmit = async (values, formik) => {
     const { email, password } = values;
@@ -68,7 +72,6 @@ function AdminPage() {
                     <div className="w-[300px] md:w-[400px]">
                       <TextField label="Email *" name="email" type="email" />
                     </div>
-
                     <div className="mt-5 w-[300px] md:w-[400px]">
                       <TextField
                         label="Password *"

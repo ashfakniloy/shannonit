@@ -3,7 +3,8 @@ import { Formik, Form } from "formik";
 import { MdPhoneInTalk, MdEmail, MdLocationPin } from "react-icons/md";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import TextField from "./TextField";
+// import TextField from "./TextField";
+import { TextField, TextArea } from "./InputField";
 
 const API_URL = "https://boolalgback.herokuapp.com/saveinfo";
 
@@ -22,26 +23,30 @@ function ContactInfo() {
     message: Yup.string().required("Message is required"),
   });
 
-  const handleSubmit = async (values, formik) => {
-    const { name, email, number, message } = values;
-
-    const res = await fetch(`${API_URL}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, email, number, message }),
-    });
-
-    if (res.ok) {
-      toast.success("Message sent successfully!");
-      console.log(res);
-      formik.resetForm();
-    } else {
-      console.log("status", res.status);
-      toast.error("Something went wrong!");
-    }
+  const handleSubmit = (values) => {
+    console.log(values);
   };
+
+  // const handleSubmit = async (values, formik) => {
+  //   const { name, email, number, message } = values;
+
+  //   const res = await fetch(`${API_URL}`, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ name, email, number, message }),
+  //   });
+
+  //   if (res.ok) {
+  //     toast.success("Message sent successfully!");
+  //     console.log(res);
+  //     formik.resetForm();
+  //   } else {
+  //     console.log("status", res.status);
+  //     toast.error("Something went wrong!");
+  //   }
+  // };
 
   return (
     <div className="bg-white">
@@ -103,7 +108,8 @@ function ContactInfo() {
                       placeholder="Service You Are Looking For *"
                       name="message"
                       type="text"
-                      textarea="true"
+                      as="textarea"
+                      rows="3"
                     />
 
                     <button

@@ -1,7 +1,6 @@
-import React from "react";
-import ContactInfo from "../components/ContactInfo";
 import Layout from "../components/Layout";
-import Request from "../components/Request";
+import ContactInfo from "../components/common/ContactInfo";
+import Request from "../components/common/Request";
 
 function ContactPage() {
   const title = "Contact page";

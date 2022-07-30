@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { Formik, Form } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import TextField from "../../components/TextField2";
+import { TextField2 as TextField } from "../../components/common/InputField";
 
 // const API_URL = "https://safkon-backend.vercel.app";
 
@@ -21,7 +21,8 @@ function UserLoginPage() {
     password: Yup.string().required("Password is required"),
   });
 
-  const handleSubmit = () => {
+  const handleSubmit = (values) => {
+    console.log(values);
     router.push("/user/dashboard");
   };
 

@@ -5,7 +5,7 @@ import { Formik, Form } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 // import ERPModal from "./ERPModal";
 import "react-toastify/dist/ReactToastify.css";
-import TextField from "./TextField2";
+import { TextField2 as TextField, TextArea } from "../common/InputField";
 
 const API_URL = "https://boolalgback.herokuapp.com/erpData";
 
@@ -43,6 +43,10 @@ function ERP_Form() {
     message: Yup.string().required("Message is required"),
   });
 
+  // const handleSubmit = (values) => {
+  //   console.log(values);
+  // };
+
   const handleSubmit = async (values, formik) => {
     const res = await fetch(`${API_URL}`, {
       method: "POST",
@@ -75,48 +79,19 @@ function ERP_Form() {
           {(formik) => (
             <Form>
               <ToastContainer />
-              <div className="grid grid-cols-2 text-sm gap-x-7 gap-y-5 md:gap-y-7">
-                <div className="col-span-2 sm:col-span-1">
-                  <TextField label="Name *" name="name" type="text" />
-                </div>
-                <div className="col-span-2 sm:col-span-1">
-                  <TextField label="Address *" name="address" type="text" />
-                </div>
-                <div className="col-span-2 sm:col-span-1">
-                  <TextField label="Phone *" name="phone" type="text" />
-                </div>
-                <div className="col-span-2 sm:col-span-1">
-                  <TextField label="Mobile *" name="mobile" type="text" />
-                </div>
-                <div className="col-span-2 sm:col-span-1">
-                  <TextField label="Website *" name="website" type="text" />
-                </div>
-                <div className="col-span-2 sm:col-span-1">
-                  <TextField label="Work *" name="work" type="text" />
-                </div>
-                <div className="col-span-2 sm:col-span-1">
-                  <TextField label="Company *" name="company" type="text" />
-                </div>
-                <div className="col-span-2 sm:col-span-1">
-                  <TextField label="Email *" name="email" type="email" />
-                </div>
-                <div className="col-span-2 sm:col-span-1">
-                  <TextField label="Country *" name="country" type="text" />
-                </div>
-                <div className="col-span-2 sm:col-span-1">
-                  <TextField label="City *" name="city" type="text" />
-                </div>
-                <div className="col-span-2 sm:col-span-1">
-                  <TextField label="Subject *" name="subject" type="text" />
-                </div>
-                <div className="col-span-2">
-                  <TextField
-                    label="Message *"
-                    name="message"
-                    type="text"
-                    textarea="true"
-                  />
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 text-sm gap-x-8 gap-y-5 md:gap-y-7">
+                <TextField label="Name *" name="name" type="text" />
+                <TextField label="Address *" name="address" type="text" />
+                <TextField label="Phone *" name="phone" type="text" />
+                <TextField label="Mobile *" name="mobile" type="text" />
+                <TextField label="Website *" name="website" type="text" />
+                <TextField label="Work *" name="work" type="text" />
+                <TextField label="Company *" name="company" type="text" />
+                <TextField label="Email *" name="email" type="email" />
+                <TextField label="Country *" name="country" type="text" />
+                <TextField label="City *" name="city" type="text" />
+                <TextField label="Subject *" name="subject" type="text" />
+                <TextArea label="Message *" name="message" type="text" />
               </div>
 
               <div className="mt-8 flex justify-start">

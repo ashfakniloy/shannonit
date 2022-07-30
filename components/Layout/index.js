@@ -4,8 +4,9 @@ import Banner from "./Banner";
 import Footer from "./Footer";
 import Header from "./Header";
 import Header2 from "./Header2";
-import ScrollToTop from "./ScrollOnTop";
 import Agent from "./Agent";
+import ScrollToTop from "./ScrollToTop";
+import Header3 from "./Header3";
 
 function Layout({ title, description, keywords, heading, text, children }) {
   const { pathname } = useRouter();
@@ -20,6 +21,8 @@ function Layout({ title, description, keywords, heading, text, children }) {
 
       <div>
         {pathname === "/" ? <Header /> : <Header2 />}
+
+        {/* <Header3 /> */}
 
         <Banner heading={heading} text={text} />
 

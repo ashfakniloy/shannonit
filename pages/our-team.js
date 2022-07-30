@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Staff from "../components/common/Staff";
 import Layout from "../components/Layout";
 import { staffs } from "../data/staffs";
 
@@ -10,7 +11,8 @@ function OurTeamPage() {
   return (
     <Layout title={title} heading={heading} text={text}>
       <div className="bg-custom-gray4">
-        <div className="lg:container py-16 lg:py-[190px] ">
+        <Staff />
+        {/* <div className="lg:container py-16 lg:py-[190px] ">
           <div className="grid lg:grid-cols-4 gap-6 lg:gap-x-5 lg:gap-y-6">
             {staffs.map((staff) => (
               <div
@@ -34,7 +36,7 @@ function OurTeamPage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );

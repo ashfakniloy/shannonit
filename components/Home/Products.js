@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import ImageGrid from "./ImageGrid";
-import { productList } from "../data/productList";
+import ImageGrid from "../common/ImageGrid";
+import { productList } from "../../data/productList";
 
 function Products() {
   const products = productList.slice(0, 6);

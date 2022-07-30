@@ -1,5 +1,5 @@
 import React from "react";
-import ImageGrid from "../components/ImageGrid";
+import ImageGrid from "../components/common/ImageGrid";
 import Layout from "../components/Layout";
 import { productList } from "../data/productList";
 
