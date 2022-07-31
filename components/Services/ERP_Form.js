@@ -93,15 +93,12 @@ function ERP_Form() {
                 <TextField label="Subject *" name="subject" type="text" />
                 <TextArea label="Message *" name="message" type="text" />
               </div>
-
-              <div className="mt-8 flex justify-start">
-                <button
-                  type="submit"
-                  className="px-9 py-3 border-2 border-custom-orange text-custom-orange text-[11px] tracking-widest font-bold bg-transparent hover:bg-custom-orange  hover:text-white transition duration-300 uppercase"
-                >
-                  Submit
-                </button>
-              </div>
+              <button
+                type="submit"
+                className="mt-5 px-9 py-3 border-2 border-custom-orange text-custom-orange text-[11px] tracking-widest font-bold bg-transparent hover:bg-custom-orange  hover:text-white transition duration-300 uppercase"
+              >
+                Submit
+              </button>
             </Form>
           )}
         </Formik>

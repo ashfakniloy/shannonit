@@ -1,6 +1,7 @@
 // import Image from "next/image";
 import Layout from "../components/Layout";
 import ERP_Form from "../components/Services/ERP_Form";
+import SchoolManagementForm from "../components/Services/SchoolManagementForm";
 
 function SchoolManagementSystemPage() {
   const title = "School Management System page";
@@ -11,7 +12,8 @@ function SchoolManagementSystemPage() {
     <Layout title={title} heading={heading} text={text}>
       <div className="bg-white">
         <div className="lg:container py-20 px-4 lg:py-32 ">
-          <ERP_Form />
+          {/* <ERP_Form /> */}
+          <SchoolManagementForm />
         </div>
       </div>
     </Layout>
