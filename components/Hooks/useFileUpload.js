@@ -3,9 +3,10 @@ import { useState } from "react";
 function useFileUpload() {
   const url = "https://api.cloudinary.com/v1_1/niloy56/image/upload";
 
+  // const [imageData, setImageData] = useState("");
   const [imagePreview, setImagePreview] = useState("");
 
-  const fileUpload = async (e, formik) => {
+  const fileUpload = async (e, formik, value, setLogoPreview) => {
     const files = e.target.files;
     const formData = new FormData();
     formData.append("file", files[0]);
@@ -22,8 +23,9 @@ function useFileUpload() {
 
     if (res.ok) {
       console.log("success", data.secure_url);
+      // setImageData(data.secure_url);
       setImagePreview(data.secure_url);
-      formik.setFieldValue("logo", data.secure_url);
+      formik.setFieldValue(value.toString(), data.secure_url);
     } else {
       console.log("failed", data);
     }
@@ -31,7 +33,9 @@ function useFileUpload() {
 
   return {
     fileUpload,
+    // imageData,
     imagePreview,
+    setImagePreview,
   };
 }
 

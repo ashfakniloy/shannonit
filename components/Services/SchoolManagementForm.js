@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import * as Yup from "yup";
 import { Formik, Form } from "formik";
@@ -22,7 +23,7 @@ function SchoolManagementForm() {
     institution_name: "",
     institution_type: "",
     institution_medium: "",
-    institution_category: "",
+    category: "",
     total_students: "",
     city: "",
     country: "",
@@ -31,21 +32,20 @@ function SchoolManagementForm() {
     website: "",
     establishment_year: "",
     institution_email: "",
-    principle_name: "",
-    principle_email: "",
+    principal_name: "",
+    principal_email: "",
     phone_no: "",
     mobile_no: "",
-    principle_phone_no: "",
+    principal_phone_no: "",
     logo: "",
+    license_copy: "",
   };
 
   const validate = Yup.object({
     institution_name: Yup.string().required("Institution Name is required"),
     institution_type: Yup.string().required("Institution Type is required"),
     institution_medium: Yup.string().required("Institution Medium is required"),
-    institution_category: Yup.string().required(
-      "Institution Category is required"
-    ),
+    category: Yup.string().required("Institution Category is required"),
     total_students: Yup.string().required("Total Students is required"),
     city: Yup.string().required("City is required"),
     country: Yup.string().required("Country is required"),
@@ -54,40 +54,117 @@ function SchoolManagementForm() {
     // website: Yup.string().required("Website is required"),
     establishment_year: Yup.string().required("Establishment Year is required"),
     institution_email: Yup.string().required(" Institution Email is required"),
-    principle_name: Yup.string().required("Principle Name is required"),
-    principle_email: Yup.string().required("Principle Email is required"),
+    principal_name: Yup.string().required("Principal Name is required"),
+    principal_email: Yup.string().required("Principal Email is required"),
     phone_no: Yup.string().required("Phone No is required"),
     mobile_no: Yup.string().required("Mobile No is required"),
-    principle_phone_no: Yup.string().required("Principle Phone No is required"),
+    principal_phone_no: Yup.string().required("Principal Phone No is required"),
     logo: Yup.string().required("Logo is required"),
+    license_copy: Yup.string().required("License Copy is required"),
   });
 
-  const { fileUpload, imagePreview } = useFileUpload();
+  const [logoPreview, setLogoPreview] = useState("");
+  const [licensePreview, setLicensePreview] = useState("");
 
-  const handleSubmit = (values) => {
-    console.log(values);
+  // const {fileUpload, imagePreview, setImagePreview} = useFileUpload()
+
+  // const { fileUpload, imageData, imagePreview, setImagePreview } =
+  //   useFileUpload();
+
+  // const logoUpload = (e, formik) => {
+  //   const value = formik.values.logo;
+  //   fileUpload(e, formik, value, setLogoPreview);
+  //   formik.setFieldValue("logo", imageData);
+  //   // setLogoPreview(imageData);
+  // };
+
+  // const licenseUpload = (e, formik) => {
+  //   const value = formik.values.license_copy;
+  //   fileUpload(e, formik, value, setLicensePreview);
+  //   formik.setFieldValue("license_upload", imageData);
+  //   // setLicensePreview(imageData);
+  // };
+
+  const logoUpload = async (e, formik) => {
+    const url = "https://api.cloudinary.com/v1_1/niloy56/image/upload";
+
+    const files = e.target.files;
+    const formData = new FormData();
+    formData.append("file", files[0]);
+    formData.append("upload_preset", "u9pqvof1");
+
+    // console.log([...formData.entries()]);
+
+    const res = await fetch(url, {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      console.log("success", data.secure_url);
+
+      setLogoPreview(data.secure_url);
+      formik.setFieldValue("logo", data.secure_url);
+    } else {
+      console.log("failed", data);
+    }
   };
 
-  // const handleSubmit = async (values, formik) => {
-  //   const res = await fetch(`${API_URL}`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(values),
-  //   });
+  const licenseUpload = async (e, formik) => {
+    const url = "https://api.cloudinary.com/v1_1/niloy56/image/upload";
 
-  //   if (res.ok) {
-  //     toast.success("Form Submitted Successfully!");
-  //     // setShowModal(true);
-  //     console.log(res);
-  //     router.push("/user");
-  //     // formik.resetForm();
-  //   } else {
-  //     console.log("status", res.status);
-  //     toast.error("Something went wrong!");
-  //   }
+    const files = e.target.files;
+    const formData = new FormData();
+    formData.append("file", files[0]);
+    formData.append("upload_preset", "u9pqvof1");
+
+    // console.log([...formData.entries()]);
+
+    const res = await fetch(url, {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      console.log("success", data.secure_url);
+
+      setLicensePreview(data.secure_url);
+      formik.setFieldValue("license_copy", data.secure_url);
+    } else {
+      console.log("failed", data);
+    }
+  };
+
+  // const handleSubmit = (values) => {
+  //   console.log(values);
   // };
+
+  const handleSubmit = async (values, formik) => {
+    const res = await fetch("http://192.168.1.106:8000/v1/admin_signup/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      toast.success("Form Submitted Successfully!");
+      // setShowModal(true);
+      console.log(data);
+      // router.push("/user");
+      // formik.resetForm();
+    } else {
+      console.log("status", data);
+      toast.error("Something went wrong!");
+    }
+  };
 
   return (
     <div>
@@ -133,7 +210,7 @@ function SchoolManagementForm() {
                 />
                 <SelectField
                   label="Institution Category *"
-                  name="institution_category"
+                  name="category"
                   type="text"
                   placeholder="Select Insitutution Category"
                   options={["Government", "Private"]}
@@ -159,30 +236,38 @@ function SchoolManagementForm() {
                   type="email"
                 />
                 <TextField
-                  label="Principle Name"
-                  name="principle_name"
+                  label="Principal Name"
+                  name="principal_name"
                   type="text"
                 />
                 <TextField
-                  label="Principle Email"
-                  name="principle_email"
+                  label="Principal Email"
+                  name="principal_email"
                   type="email"
                 />
 
                 <TextField label="Phone No *" name="phone_no" type="text" />
                 <TextField label="Mobile No *" name="mobile_no" type="text" />
                 <TextField
-                  label="Principle Phone No *"
-                  name="principle_phone_no"
+                  label="Principal Phone No *"
+                  name="principal_phone_no"
                   type="text"
                 />
               </div>
-              <div className="my-4">
+              <div className="my-4 flex flex-col md:flex-row gap-5">
                 <FileField
                   name="logo"
                   label="Logo *"
-                  handleChange={(e) => fileUpload(e, formik)}
-                  imagePreview={imagePreview}
+                  handleChange={(e) => logoUpload(e, formik)}
+                  imagePreview={logoPreview}
+                  // imagePreview={imagePreview}
+                />
+                <FileField
+                  name="license_copy"
+                  label="License Copy *"
+                  handleChange={(e) => licenseUpload(e, formik)}
+                  imagePreview={licensePreview}
+                  // imagePreview={imagePreview}
                 />
               </div>
               <button
