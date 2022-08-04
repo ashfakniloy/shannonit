@@ -24,6 +24,7 @@ function SchoolManagementForm() {
     institution_type: "",
     institution_medium: "",
     category: "",
+    username: "",
     total_students: "",
     city: "",
     country: "",
@@ -46,6 +47,7 @@ function SchoolManagementForm() {
     institution_type: Yup.string().required("Institution Type is required"),
     institution_medium: Yup.string().required("Institution Medium is required"),
     category: Yup.string().required("Institution Category is required"),
+    username: Yup.string().required("Username is required"),
     total_students: Yup.string().required("Total Students is required"),
     city: Yup.string().required("City is required"),
     country: Yup.string().required("Country is required"),
@@ -215,6 +217,7 @@ function SchoolManagementForm() {
                   placeholder="Select Insitutution Category"
                   options={["Government", "Private"]}
                 />
+                <TextField label="Username *" name="username" type="text" />
                 <TextField
                   label="Total Students *"
                   name="total_students"
