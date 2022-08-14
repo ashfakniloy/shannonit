@@ -150,7 +150,7 @@ function SchoolManagementForm() {
   // };
 
   const handleSubmit = async (values, formik) => {
-    const res = await fetch(`${API_URL}/admin_signup/add`, {
+    const res = await fetch(`${API_URL}/admin_signup/add/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
