@@ -5,10 +5,10 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta
+          {/* <meta
             httpEquiv="Content-Security-Policy"
             content="upgrade-insecure-requests"
-          />
+          /> */}
           <link rel="icon" href="/images/logo/shannonit.jpg" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
