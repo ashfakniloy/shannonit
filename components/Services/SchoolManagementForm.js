@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import * as Yup from "yup";
 import { Formik, Form } from "formik";
 import { ToastContainer, toast } from "react-toastify";
-// import ERPModal from "./ERPModal";
+import ERPModal from "./ERPModal";
 import "react-toastify/dist/ReactToastify.css";
 import {
   TextField2 as TextField,
@@ -12,11 +12,15 @@ import {
   FileField,
 } from "../common/InputField";
 import useFileUpload from "../Hooks/useFileUpload";
+import SchoolManagementModal from "./SchoolManagementModal";
 
-const API_URL = "https://boolalgback.herokuapp.com/erpData";
+// const API_URL = "https://boolalgback.herokuapp.com/erpData";
+const API_URL = "http://34.131.4.194/v1";
 
 function SchoolManagementForm() {
-  // const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+
   const router = useRouter();
 
   const initialvalues = {
@@ -24,7 +28,7 @@ function SchoolManagementForm() {
     institution_type: "",
     institution_medium: "",
     category: "",
-    username: "",
+    user_name: "",
     total_students: "",
     city: "",
     country: "",
@@ -47,7 +51,7 @@ function SchoolManagementForm() {
     institution_type: Yup.string().required("Institution Type is required"),
     institution_medium: Yup.string().required("Institution Medium is required"),
     category: Yup.string().required("Institution Category is required"),
-    username: Yup.string().required("Username is required"),
+    user_name: Yup.string().required("Username is required"),
     total_students: Yup.string().required("Total Students is required"),
     city: Yup.string().required("City is required"),
     country: Yup.string().required("Country is required"),
@@ -146,7 +150,7 @@ function SchoolManagementForm() {
   // };
 
   const handleSubmit = async (values, formik) => {
-    const res = await fetch("http://192.168.1.106:8000/v1/admin_signup/add", {
+    const res = await fetch(`${API_URL}/admin_signup/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -158,13 +162,14 @@ function SchoolManagementForm() {
 
     if (res.ok) {
       toast.success("Form Submitted Successfully!");
-      // setShowModal(true);
+      setShowModal(true);
+      setModalMessage(data.data);
       console.log(data);
       // router.push("/user");
       // formik.resetForm();
     } else {
       console.log("status", data);
-      toast.error("Something went wrong!");
+      toast.error(data.message);
     }
   };
 
@@ -217,7 +222,7 @@ function SchoolManagementForm() {
                   placeholder="Select Insitutution Category"
                   options={["Government", "Private"]}
                 />
-                <TextField label="Username *" name="username" type="text" />
+                <TextField label="Username *" name="user_name" type="text" />
                 <TextField
                   label="Total Students *"
                   name="total_students"
@@ -283,6 +288,12 @@ function SchoolManagementForm() {
           )}
         </Formik>
       </div>
+
+      <SchoolManagementModal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        modalMessage={modalMessage}
+      />
 
       {/* <ERPModal showModal={showModal} setShowModal={setShowModal} /> */}
     </div>
