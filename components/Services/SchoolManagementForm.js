@@ -15,7 +15,8 @@ import useFileUpload from "../Hooks/useFileUpload";
 import SchoolManagementModal from "./SchoolManagementModal";
 
 // const API_URL = "https://boolalgback.herokuapp.com/erpData";
-const API_URL = "http://34.131.4.194/v1";
+// const API_URL = "http://34.131.4.194/v1";
+const API_URL = "https://limassolwaterdelivery.com/v1";
 
 function SchoolManagementForm() {
   const [showModal, setShowModal] = useState(false);
@@ -289,11 +290,11 @@ function SchoolManagementForm() {
         </Formik>
       </div>
 
-      <SchoolManagementModal
+      {/* <SchoolManagementModal
         showModal={showModal}
         setShowModal={setShowModal}
         modalMessage={modalMessage}
-      />
+      /> */}
 
       {/* <ERPModal showModal={showModal} setShowModal={setShowModal} /> */}
     </div>
