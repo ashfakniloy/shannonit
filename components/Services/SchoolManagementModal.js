@@ -38,7 +38,7 @@ function SchoolManagementModal({ showModal, setShowModal, modalMessage }) {
             </button>
           </div>
 
-          <div className="p-6 text-center">
+          <div className="p-8 text-center ">
             <p className="text-xl lg:text-2xl  font-Poppins text-green-600">
               {modalMessage}
             </p>

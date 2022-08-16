@@ -164,10 +164,10 @@ function SchoolManagementForm() {
     if (res.ok) {
       toast.success("Form Submitted Successfully!");
       setShowModal(true);
-      setModalMessage(data.data);
+      setModalMessage(data.message);
       console.log(data);
       // router.push("/user");
-      // formik.resetForm();
+      formik.resetForm();
     } else {
       console.log("status", data);
       toast.error(data.message);
@@ -290,11 +290,11 @@ function SchoolManagementForm() {
         </Formik>
       </div>
 
-      {/* <SchoolManagementModal
+      <SchoolManagementModal
         showModal={showModal}
         setShowModal={setShowModal}
         modalMessage={modalMessage}
-      /> */}
+      />
 
       {/* <ERPModal showModal={showModal} setShowModal={setShowModal} /> */}
     </div>
