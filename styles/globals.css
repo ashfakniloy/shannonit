@@ -2,30 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-.heading-xl {
-  @apply text-custom-gray text-[25px] lg:text-[55px] font-Montserrat;
+@layer base {
+  html,
+  body {
+    @apply p-0 m-0;
+  }
+
+  .heading-xl {
+    @apply text-custom-gray text-[25px] lg:text-[55px] font-Montserrat;
+  }
+
+  .heading-lg {
+    @apply text-custom-gray text-[20px] lg:text-[32px] font-Montserrat;
+  }
+
+  .heading-md {
+    @apply text-custom-gray text-[19px] lg:text-[26px] font-Montserrat;
+  }
+
+  .heading-sm {
+    @apply text-custom-gray text-[17px] lg:text-[20px] font-Montserrat;
+  }
+
+  .header-link {
+    @apply hover:text-custom-orange transition duration-300 cursor-pointer;
+  }
+
+  .header2-link {
+    @apply border-b-2 hover:border-custom-orange transition duration-300 cursor-pointer;
+  }
+
+  .link {
+    @apply text-custom-orange text-sm font-semibold flex items-center gap-4 cursor-pointer hover:gap-2 hover:text-red-600 duration-300;
+  }
 }
 
-.heading-lg {
-  @apply text-custom-gray text-[20px] lg:text-[32px] font-Montserrat;
-}
-
-.heading-md {
-  @apply text-custom-gray text-[19px] lg:text-[26px] font-Montserrat;
-}
-
-.heading-sm {
-  @apply text-custom-gray text-[17px] lg:text-[20px] font-Montserrat;
-}
-
-.header-link {
-  @apply hover:text-custom-orange transition duration-300 cursor-pointer;
-}
-
-.header2-link {
-  @apply border-b-2 hover:border-custom-orange transition duration-300 cursor-pointer;
-}
-
-.link {
-  @apply text-custom-orange text-sm font-semibold flex items-center gap-4 cursor-pointer hover:gap-2 hover:text-red-600 duration-300;
+html,
+body {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
