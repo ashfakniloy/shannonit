@@ -1,5 +1,6 @@
 import { FaAngleRight, FaAngleDown } from "react-icons/fa";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Accordion({ service, index, clicked, setClicked }) {
   const toggle = (index) => {
@@ -25,18 +26,27 @@ function Accordion({ service, index, clicked, setClicked }) {
           </div>
         </div>
 
-        <div
-          className={
-            clicked === index ? "flex flex-col gap-7 py-4 pr-16" : "hidden"
-          }
-        >
-          <p className="text-sm text-custom-gray3">{service.desc}</p>
-          <Link href="/more" passHref>
-            <p className="link">
-              Learn more <FaAngleRight />
-            </p>
-          </Link>
-        </div>
+        <AnimatePresence>
+          {clicked === index && (
+            <motion.div
+              initial={{ height: 0 }}
+              animate={{ height: "auto" }}
+              exit={{ height: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="overflow-hidden"
+            >
+              <div className="flex flex-col gap-7 py-4 pr-16">
+                <p className="text-sm text-custom-gray3">{service.desc}</p>
+                <Link href="/more" passHref>
+                  <p className="link">
+                    Learn more <FaAngleRight />
+                  </p>
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* {clicked === index ? (
           <div className="flex flex-col gap-7 py-4 pr-16 ">
             <p className="text-sm text-custom-gray3">{service.desc}</p>

@@ -1,21 +1,88 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { FaAngleDown } from "react-icons/fa";
+import { navLinks } from "./navLinks";
+import { AnimatePresence, motion } from "framer-motion";
 
 function DropDown({ pathname }) {
   const [showServices, setShowServices] = useState(false);
   const [showPages, setShowPages] = useState(false);
+  const [showSubMenu, setShowSubMenu] = useState("");
+
+  const toggle = (index) => {
+    if (showSubMenu === index) {
+      return setShowSubMenu(null);
+    }
+    setShowSubMenu(index);
+  };
 
   return (
     <div className="px-3">
       <div
-        className={`lg:hidden flex flex-col ${
-          pathname === "/"
-            ? "bg-custom-orange text-white"
-            : "bg-white text-custom-orange"
-        }  text-lg cursor-pointer uppercase`}
+        className={`lg:hidden flex flex-col bg-custom-orange text-white text-lg cursor-pointer uppercase`}
       >
-        <Link href="/">
+        {navLinks &&
+          navLinks.map((navLink, i) => (
+            <div key={i} className="border-b border-red-200 last:border-b-0">
+              {!navLink.subLinks ? (
+                <Link href={navLink.link} passHref>
+                  <a>
+                    <p
+                      className={`px-6 py-2 ${
+                        pathname === navLink.link
+                          ? "text-custom-orange bg-red-200"
+                          : ""
+                      }`}
+                      onClick={() => toggle(null)}
+                    >
+                      {navLink.name}
+                    </p>
+                  </a>
+                </Link>
+              ) : (
+                <div
+                  className="flex justify-between items-center px-6 py-2"
+                  onClick={() => toggle(i)}
+                >
+                  <p>{navLink.name}</p>
+                  <span>
+                    <FaAngleDown />
+                  </span>
+                </div>
+              )}
+
+              <AnimatePresence>
+                {showSubMenu === i && (
+                  <motion.div
+                    initial={{ height: 0 }}
+                    animate={{ height: "auto" }}
+                    exit={{ height: 0 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="overflow-hidden"
+                  >
+                    {navLink.subLinks.map((subLink, i) => (
+                      <Link key={i} href={subLink.link} passHref>
+                        <a>
+                          <p
+                            className={`px-10 py-2 text-sm ${
+                              pathname === subLink.link
+                                ? "text-custom-orange bg-red-200"
+                                : ""
+                            }`}
+                            onClick={() => toggle(null)}
+                          >
+                            {subLink.name}
+                          </p>
+                        </a>
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+
+        {/* <Link href="/">
           <a
             className={`px-6 py-2 border-y ${
               pathname === "/" ? "text-custom-orange bg-white" : ""
@@ -42,15 +109,7 @@ function DropDown({ pathname }) {
             gallery
           </a>
         </Link>
-        {/* <Link href="/services">
-          <a
-            className={`px-6 py-2 border-b ${
-              pathname === "/services" ? "text-black" : ""
-            }`}
-          >
-            services
-          </a>
-        </Link> */}
+        
 
         <div className="border-b cursor-text">
           <a
@@ -151,7 +210,7 @@ function DropDown({ pathname }) {
           >
             contact
           </a>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

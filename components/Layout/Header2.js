@@ -1,15 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useId } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import DropDown from "./DropDown";
+import { navLinks } from "./navLinks";
+import { motion } from "framer-motion";
 
 function Header() {
   const [scroll, setScroll] = useState(false);
   const [toggle, setToggle] = useState(false);
   const [showServices, setShowServices] = useState(false);
   const [showPages, setShowPages] = useState(false);
+  const [showSubMenu, setShowSubMenu] = useState("");
+  // const uId = useId();
+
   const { pathname } = useRouter();
 
   const handleToggle = () => {
@@ -24,6 +29,13 @@ function Header() {
     }
   };
 
+  const menu = (index) => {
+    if (showSubMenu === index) {
+      return setShowSubMenu(null);
+    }
+    setShowSubMenu(index);
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
     return () => {
@@ -31,9 +43,18 @@ function Header() {
     };
   }, []);
 
+  const activeSubBorder = (navLink) => {
+    const value = navLink.subLinks.find((subLink) => subLink.link === pathname);
+    if (pathname === value?.link) {
+      return "header2-link border-custom-orange text-custom-orange";
+    } else {
+      return "border-transparent header2-link";
+    }
+  };
+
   const activeBorder = (path) =>
     pathname === path
-      ? "border-custom-orange header2-link"
+      ? "header2-link border-custom-orange text-custom-orange"
       : "border-transparent header2-link";
 
   const activeLink = (path) =>
@@ -75,7 +96,66 @@ function Header() {
           </button>
 
           <div className="hidden lg:flex gap-[50px]  uppercase text-sm font-Montserrat">
-            <Link href="/">
+            {navLinks &&
+              navLinks.map((navLink, i) => (
+                <div key={i}>
+                  {!navLink.subLinks ? (
+                    <div className="">
+                      <Link href={navLink.link} passHref>
+                        <a
+                          className={`border-transparent ${activeBorder(
+                            navLink.link
+                          )}`}
+                        >
+                          {navLink.name}
+                        </a>
+                      </Link>
+                      <div className={activeBorder(navLink.link)}></div>
+                    </div>
+                  ) : (
+                    <div
+                      onMouseEnter={() => menu(i)}
+                      onMouseLeave={() => menu(null)}
+                      className={`border-transparent ${activeSubBorder(
+                        navLink
+                      )}`}
+                    >
+                      <div>
+                        {/* <p className="border-b-2 border-custom-orange"> */}
+                        {/* <p className={` ${activeSubBorder(navLink)}`}> */}
+                        <p className="">{navLink.name}</p>
+                        <div className={` ${activeSubBorder(navLink)}`}></div>
+                      </div>
+
+                      {showSubMenu === i && (
+                        <div className="absolute">
+                          <div className="h-8 border-b-2 border-custom-gray"></div>
+                          <div className="py-2 bg-custom-orange shadow-xl">
+                            {navLink.subLinks.map((subLink, i) => (
+                              <div
+                                key={i}
+                                className={`text-white flex flex-col hover:text-custom-orange hover:bg-white cursor-pointer duration-300 ${
+                                  pathname === subLink.link
+                                    ? "bg-white text-custom-orange "
+                                    : ""
+                                }}`}
+                              >
+                                <Link href={subLink.link}>
+                                  <a className={`py-2 pl-4 pr-24`}>
+                                    {subLink.name}
+                                  </a>
+                                </Link>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              ))}
+
+            {/* <Link href="/">
               <a className="header2-link border-transparent">home</a>
             </Link>
             <Link href="/about">
@@ -84,9 +164,7 @@ function Header() {
             <Link href="/gallery">
               <a className={activeBorder("/gallery")}>gallery</a>
             </Link>
-            {/* <Link href="/services">
-              <a className={activeBorder("/services")}>services</a>
-            </Link> */}
+            
 
             <div
               onMouseEnter={() => setShowServices(true)}
@@ -160,7 +238,7 @@ function Header() {
             </div>
             <Link href="/contact">
               <a className={activeBorder("/contact")}>contact</a>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

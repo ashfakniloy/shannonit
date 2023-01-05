@@ -29,7 +29,7 @@ function Staff() {
                   height={340}
                 />
               </div>
-              <h3 className="mt-5 text-lg font-Montserrat text-custom-gray lg:heading-lg">
+              <h3 className="mt-5 text-center text-custom-gray text-[20px] lg:text-[23px] font-Montserrat">
                 {staff.name}
               </h3>
               <p className="text-sm text-center text-custom-gray3">

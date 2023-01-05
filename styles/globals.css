@@ -29,7 +29,7 @@
   }
 
   .header2-link {
-    @apply border-b-2 hover:border-custom-orange transition duration-300 cursor-pointer;
+    @apply border-b-2 border-transparent hover:text-custom-orange transition duration-300 cursor-pointer;
   }
 
   .link {
